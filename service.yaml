@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-rocks
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8000
+  selector:
+    app: go-rocks
+    tier: web

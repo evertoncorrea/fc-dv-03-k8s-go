@@ -13,14 +13,8 @@ steps:
     args:
       - "build"
       - "-t"
-      - "evertoncorrea/go_rocks:latest"
+      - "gcr.io/$PROJECT_ID/go-rocks:latest"
       - "."
 
-  - id: "Login no Docker"
-    name: "gcr.io/cloud-builders/docker"
-    entrypoint: "bash"
-    args:
-      ["-c", "docker login --username=evertoncorrea --password=${_PASSWORD}"]
-
 images:
-  - "evertoncorrea/go_rocks:latest"
+  - "gcr.io/$PROJECT_ID/go-rocks:latest"
