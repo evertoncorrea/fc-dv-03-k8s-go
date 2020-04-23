@@ -13,7 +13,6 @@ steps:
     args:
       - "build"
       - "-t"
-      #      - "gcr.io/$PROJECT_ID/go_rocks:latest"
       - "evertoncorrea/go_rocks:latest"
       - ""
 
