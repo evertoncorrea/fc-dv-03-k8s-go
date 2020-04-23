@@ -14,7 +14,7 @@ steps:
       - "build"
       - "-t"
       - "evertoncorrea/go_rocks:latest"
-      - ""
+      - "."
 
   - id: "Login no Docker"
     name: "gcr.io/cloud-builders/docker"
