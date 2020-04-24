@@ -7,6 +7,7 @@ steps:
   - id: "(2) Construindo app"
     name: "gcr.io/cloud-builders/go"
     args: ["build", "./src/main.go"]
+    env: ["GOOS=linux"]
 
   - id: "(3) Criando container"
     name: "gcr.io/cloud-builders/docker"

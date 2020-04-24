@@ -15,7 +15,7 @@ spec:
         tier: web
     spec:
       containers:
-        - image: "gcr.io/$PROJECT_ID/go-rocks:latest"
+        - image: "gcr.io/persuasive-feat-273520/go-rocks:latest"
           name: go-rocks
           ports:
             - containerPort: 8000
