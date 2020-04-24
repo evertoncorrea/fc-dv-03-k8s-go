@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-rocks
+spec:
+  selector:
+    matchLabels:
+      app: go-rocks
+      tier: web
+
+  template:
+    metadata:
+      labels:
+        app: go-rocks
+        tier: web
+    spec:
+      containers:
+        - image: "gcr.io/persuasive-feat-273520/go-rocks:latest"
+          name: go-rocks
+          ports:
+            - containerPort: 8000

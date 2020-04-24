@@ -7,21 +7,15 @@ steps:
   - id: "(2) Construindo app"
     name: "gcr.io/cloud-builders/go"
     args: ["build", "./src/main.go"]
+    env: ["GOOS=linux"]
 
   - id: "(3) Criando container"
     name: "gcr.io/cloud-builders/docker"
     args:
       - "build"
       - "-t"
-      #      - "gcr.io/$PROJECT_ID/go_rocks:latest"
-      - "evertoncorrea/go_rocks:latest"
-      - ""
-
-  - id: "Login no Docker"
-    name: "gcr.io/cloud-builders/docker"
-    entrypoint: "bash"
-    args:
-      ["-c", "docker login --username=evertoncorrea --password=${_PASSWORD}"]
+      - "gcr.io/$PROJECT_ID/go-rocks:latest"
+      - "."
 
 images:
-  - "evertoncorrea/go_rocks:latest"
+  - "gcr.io/$PROJECT_ID/go-rocks:latest"
